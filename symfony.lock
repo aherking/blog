@@ -80,6 +80,15 @@
     "ezyang/htmlpurifier": {
         "version": "v4.9.3"
     },
+    "javiereguiluz/easyadmin-bundle": {
+        "version": "1.17",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.17",
+            "ref": "66070ea553247b0cd5275e21d0fe5399a25f40be"
+        }
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -197,6 +206,15 @@
     "symfony/intl": {
         "version": "v4.0.1"
     },
+    "symfony/maker-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
+    },
     "symfony/monolog-bridge": {
         "version": "v4.0.1"
     },
@@ -223,6 +241,9 @@
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
+    },
+    "symfony/process": {
+        "version": "v4.0.1"
     },
     "symfony/property-access": {
         "version": "v4.0.1"
@@ -280,6 +301,15 @@
     },
     "symfony/validator": {
         "version": "v4.0.1"
+    },
+    "symfony/web-server-bundle": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "c72d107d077f1654428edaed69415d0228c1aefe"
+        }
     },
     "symfony/yaml": {
         "version": "v4.0.1"
