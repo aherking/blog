@@ -14,10 +14,10 @@ class BlogPosts
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    protected $id;
-    protected $name;
-    protected $description;
-
+    private $id;
 
     // add your own fields
+
+
+
 }

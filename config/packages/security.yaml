@@ -1,18 +1,37 @@
 security:
-    # https://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    encoders:
+        App\Entity\User:
+            algorithm: bcrypt
+
+    # ...
+
     providers:
-        in_memory: { memory: ~ }
+        our_db_provider:
+            entity:
+                class: App\Entity\User
+                property: username
+                # if you're using multiple entity managers
+                # manager_name: customer
+
     firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
         main:
-            anonymous: ~
+            pattern: ^/admin
+            form_login:
 
-            # activate different ways to authenticate
+                # field names for the username and password fields
+                username_parameter: _username
+                password_parameter: _password
 
-            # http_basic: ~
-            # https://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
 
-            # form_login: ~
-            # https://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+                # by default, the login form *must* be a POST, not a GET
+                post_only:      true
+                remember_me:    false
+
+                # by default, a session must exist before submitting an authentication request
+                # if false, then Request::hasPreviousSession is not called during authentication
+                require_previous_session: true
+                login_path: login
+                check_path: login
+                use_forward: true
+            provider: our_db_provider
