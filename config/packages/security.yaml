@@ -31,7 +31,7 @@ security:
                 # by default, a session must exist before submitting an authentication request
                 # if false, then Request::hasPreviousSession is not called during authentication
                 require_previous_session: true
-                login_path: login
-                check_path: login
+                login_path: /admin/login
+                check_path: /admin/login
                 use_forward: true
             provider: our_db_provider
