@@ -6,10 +6,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class BlogPostsController extends Controller
+class StartController extends Controller
 {
     /**
-     * @Route("/blog/posts", name="blog_posts")
+     * @Route("/", name="start")
      */
     public function index()
     {
