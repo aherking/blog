@@ -1,20 +1,25 @@
 <!doctype html>
 <html lang="de">
   <head>
+{% block metainformation %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Blog Template for Bootstrap</title>
+{% endblock %}
+    <title>{% block title %}Default Blog{% endblock %}</title>
 
-    <link href="./build/css/app.css" rel="stylesheet">
+{% block stylesheets %}
+    <link href="{{ url('index') }}/build/css/app.css" rel="stylesheet">
+{% endblock %}
   </head>
 
   <body>
-
+{% block header %}
     <header>
       <div class="blog-masthead">
         <div class="container">
+
           <nav class="nav">
             <a class="nav-link active" href="#">Home</a>
             <a class="nav-link" href="#">New features</a>
@@ -32,12 +37,14 @@
         </div>
       </div>
     </header>
+  {% endblock %}
 
     <main role="main" class="container">
 
       <div class="row">
 
         <div class="col-sm-8 blog-main">
+{% block content %}
 
           <div class="blog-post">
             <h2 class="blog-post-title">Sample blog post</h2>
@@ -98,19 +105,25 @@
             <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
           </div><!-- /.blog-post -->
 
+          {% endblock %}
+
+          {% block pagination %}
           <nav class="blog-pagination">
             <a class="btn btn-outline-primary" href="#">Older</a>
             <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
           </nav>
-
+          {% endblock %}
         </div><!-- /.blog-main -->
 
         <aside class="col-sm-3 ml-sm-auto blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
+          {% block box %}
             <h4>About</h4>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            {% endblock %}
           </div>
           <div class="sidebar-module">
+            {% block archive %}
             <h4>Archives</h4>
             <ol class="list-unstyled">
               <li><a href="#">March 2014</a></li>
@@ -126,14 +139,17 @@
               <li><a href="#">May 2013</a></li>
               <li><a href="#">April 2013</a></li>
             </ol>
+            {% endblock %}
           </div>
           <div class="sidebar-module">
+            {% block elsewhere %}
             <h4>Elsewhere</h4>
             <ol class="list-unstyled">
               <li><a href="#">GitHub</a></li>
               <li><a href="#">Twitter</a></li>
               <li><a href="#">Facebook</a></li>
             </ol>
+            {% endblock %}
           </div>
         </aside><!-- /.blog-sidebar -->
 
@@ -142,11 +158,15 @@
     </main><!-- /.container -->
 
     <footer class="blog-footer">
+      {% block footer %}
       <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
       <p>
         <a href="#">Back to top</a>
       </p>
+      {% endblock %}
     </footer>
+    {% block js %}
     <script src="./build/js/app.js"></script>
+    {% endblock %}
   </body>
 </html>
